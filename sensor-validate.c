@@ -7,6 +7,8 @@ int _give_me_a_good_name(double value, double nextValue, double maxDelta) {
   return 1;
 }
 
+/*
+
 int validateSOCreadings(double* values, int numOfValues) {
   int lastButOneIndex = numOfValues - 1;
   for(int i = 0; i < lastButOneIndex; i++) {
@@ -27,6 +29,7 @@ int validateCurrentreadings(double* values, int numOfValues) {
   return 1;
 }
 
+*/
 int validatereadings(double* values, int numOfValues, double limit) {
 
   for(int index = 0; index < numOfValues; index++) {
