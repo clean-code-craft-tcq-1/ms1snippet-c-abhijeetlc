@@ -26,3 +26,13 @@ int validateCurrentreadings(double* values, int numOfValues) {
   }
   return 1;
 }
+
+int validatereadings(double* values, int numOfValues, double limit) {
+
+  for(int index = 0; index < numOfValues; index++) {
+    if(!_give_me_a_good_name(values[index], values[index + 1], limit)) {
+      return 0;
+    }
+  }
+  return 1;
+}
