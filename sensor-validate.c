@@ -4,9 +4,9 @@
 
 /* Funtion to detect jumps between 2 values*/
 /*Arguements : current value, next value , maxdelta */
-/*return type : integer*/
-int detectjumpsandreact(double value, double nextValue, double maxDelta) {
-  if(nextValue - value > maxDelta) {
+/*return type : bool*/
+bool detectjumpsandreact(double currentvalue, double nextValue, double maxDelta) {
+  if(nextValue - currentvalue > maxDelta) {
     return 0;
   }
   return 1;
