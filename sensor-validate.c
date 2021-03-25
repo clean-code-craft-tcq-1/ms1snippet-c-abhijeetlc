@@ -1,26 +1,26 @@
-#include "sensor-validate.h"
+/*-------------------------Source File ----------------------------------*/
+/*Author : Abhijeet C */
+#include "sensor-validate.h" /*Header Includes*/
+#include <stdlib.h>
+#include <math.h>
 
-int _give_me_a_good_name(double value, double nextValue, double maxDelta) {
-  if(nextValue - value > maxDelta) {
+/* Funtion to detect jumps between 2 values*/
+/*Arguements : current value, next value , maxdelta */
+/*return type : bool*/
+bool detectjumpsandreact(double currentvalue, double nextValue, double maxDelta) {
+  if(nextValue - currentvalue > maxDelta) {
     return 0;
   }
   return 1;
 }
 
-int validateSOCreadings(double* values, int numOfValues) {
-  int lastButOneIndex = numOfValues - 1;
-  for(int i = 0; i < lastButOneIndex; i++) {
-    if(!_give_me_a_good_name(values[i], values[i + 1], 0.05)) {
-      return 0;
-    }
-  }
-  return 1;
-}
+/* Funtion to validate the sensor readings */
+/*Arguements : pointer to readings, number of values , maxdelta value */
+/*return type : integer*/
+int validatereadings(double* values, int numOfValues, double limit) {
 
-int validateCurrentreadings(double* values, int numOfValues) {
-  int lastButOneIndex = numOfValues - 1;
-  for(int i = 0; i < lastButOneIndex; i++) {
-    if(!_give_me_a_good_name(values[i], values[i + 1], 0.1)) {
+  for(int index = 0; index < numOfValues; index++) {
+    if(!detectjumpsandreact(values[index], values[index + 1], limit)) {
       return 0;
     }
   }

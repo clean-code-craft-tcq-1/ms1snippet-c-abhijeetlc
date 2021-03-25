@@ -1,6 +1,6 @@
+/*-------------------------Header-----------------------*/
+/* Author : Abhijeet C */ 
+/* Header includes the function prototype for funtions that detect jumps between values and validates the readings respectively*/
 
-int _give_me_a_good_name(double value, double nextValue, double maxDelta);
-
-int validateSOCreadings(double* values, int numOfValues);
-
-int validateCurrentreadings(double* values, int numOfValues);
+bool detectjumpsandreact(double currentvalue, double nextValue, double maxDelta);
+int validatereadings(double* values, int numOfValues, double limit);
