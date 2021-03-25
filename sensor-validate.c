@@ -1,6 +1,8 @@
 /*-------------------------Source File ----------------------------------*/
 /*Author : Abhijeet C */
 #include "sensor-validate.h" /*Header Includes*/
+#include <stdlib.h>
+#include <math.h>
 
 /* Funtion to detect jumps between 2 values*/
 /*Arguements : current value, next value , maxdelta */
