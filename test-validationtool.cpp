@@ -14,3 +14,11 @@ TEST_CASE("reports error when current jumps abruptly") {
   int numOfCurReadings = sizeof(currentReadings) / sizeof(currentReadings[0]);
   REQUIRE(validatereadings(currentReadings, numOfCurReadings, 0.1) == 0);
 }
+
+TEST_CASE("checks for null and reports error when current jumps abruptly") {
+  double currentReadings[] = {};
+  int numOfCurReadings = sizeof(currentReadings) / sizeof(currentReadings[0]);
+  if (!isnan(numOfCurReadings)){
+  REQUIRE(validatereadings(currentReadings, numOfCurReadings, 0.1) == 0);
+  }
+}
